@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.18/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Traffico</title>
+  </head>
+  <body class="bg-gray-100 h-screen w-screen">
+    <nav class="bg-gray-800 text-white p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="/" class="text-lg font-semibold">Traffico</a>
+        <div>
+          <a
+            href="/helmet-detection"
+            class="px-3 py-2 rounded hover:bg-gray-700"
+            >Camera 1</a
+          >
+          <a href="/speed-detection" class="px-3 py-2 rounded hover:bg-gray-700"
+            >Camera 2</a
+          >
+          <a
+            href="/seatbelt-detection"
+            class="px-3 py-2 rounded hover:bg-gray-700"
+            >Camera 3</a
+          >
+          <a href="/signal-jumping" class="px-3 py-2 rounded hover:bg-gray-700"
+            >Camera 4</a
+          >
+        </div>
+      </div>
+    </nav>
+    <div class="w-full max-w-6xl mx-auto px-4">
+      <div class="text-center mt-8">
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mb-2"
+          onclick="history.back(-1)"
+        >
+          Go Back
+        </button>
+        <div id="camera1">
+          <h3 class="text-2xl font-semibold my-5">Camera 4 - Signal-Jumping</h3>
+          <img
+            src="{{ url_for('/signal-jumping.video_feed') }}"
+            class="w-full h-auto shadow-lg rounded"
+          />
+        </div>
+        <!-- Repeat for other cameras as needed, each with an ID corresponding to the nav link -->
+      </div>
+    </div>
+  </body>
+</html>

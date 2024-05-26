@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.18/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>Traffico</title>
+  </head>
+  <body class="bg-gray-100 h-screen w-screen">
+    <nav class="bg-gray-800 text-white p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="/" class="text-xl font-bold">Traffico</a>
+        <div class="flex">
+          <a
+            href="/helmet-detection"
+            class="px-3 py-2 rounded hover:bg-gray-700"
+            >Camera 1</a
+          >
+          <a href="/speed-detection" class="px-3 py-2 rounded hover:bg-gray-700"
+            >Camera 2</a
+          >
+          <a
+            href="/seatbelt-detection"
+            class="px-3 py-2 rounded hover:bg-gray-700"
+            >Camera 3</a
+          >
+          <a href="/signal-jumping" class="px-3 py-2 rounded hover:bg-gray-700"
+            >Camera 4</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mx-auto px-2 mt-2">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+        <a href="/helmet-detection" class="px-4 py-2">
+          <h3 class="text-lg font-semibold">Camera 1 - Helmet-Detection</h3>
+          <img
+            src="{{ url_for('/helmet-detection.video_feed') }}"
+            class="w-full h-auto shadow-md rounded-lg"
+          />
+        </a>
+        <a href="/speed-detection" class="px-4 py-2">
+          <h3 class="text-lg font-semibold">Camera 2 - Speed-Detection</h3>
+          <img
+            src="{{ url_for('/speed-detection.video_feed') }}"
+            class="w-full h-auto shadow-md rounded-lg"
+          />
+        </a>
+
+        <a href="/seatbelt-detection" class="px-4 py-2">
+          <h3 class="text-lg font-semibold">Camera 3 - Seatbelt-Detection</h3>
+          <img
+            src="{{ url_for('/seatbelt-detection.video_feed') }}"
+            class="w-full h-auto shadow-md rounded-lg"
+          />
+        </a>
+        <a href="/signal-jumping" class="px-4 py-2">
+          <h3 class="text-lg font-semibold">Camera 4 - Signal-Jumping</h3>
+          <img
+            src="{{ url_for('/signal-jumping.video_feed') }}"
+            class="w-full h-auto shadow-md rounded-lg"
+          />
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
